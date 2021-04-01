@@ -5,13 +5,20 @@ class HomeController < ApplicationController
   end
 
   def search
-    @destinations = HTTParty.get("http://localhost:3000/destinations?city=#{params[:city_search]}").parsed_response
+    if params[:city_search]
+      destination_object = Destination.new(params[:city_search].downcase)
+      @destinations = destination_object.get_cities
+    elsif params[:country_search]
+      destination_object = Destination.new(params[:country_search].downcase)
+      @destinations = destination_object.get_cities_by_country
+    end
     render :index
   end
 
   def show
-    @destination = HTTParty.get("http://localhost:3000/destinations/#{params[:id]}").parsed_response
-    @reviews = HTTParty.get("http://localhost:3000/destinations/#{params[:id]}/reviews").parsed_response
+    destination_object = Destination.new(params[:id])
+    @destination = destination_object.get_destination
+    @reviews = destination_object.get_reviews
     render :show
   end
 

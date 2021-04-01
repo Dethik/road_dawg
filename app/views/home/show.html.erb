@@ -4,7 +4,7 @@
   <h3>Reviews</h3>
   <% @reviews.each do |review| %>
     <li>
-      <%= review["author"] %>, <%= review["content"] %>
+      <%= review["author"] %>: <%= review["rating"] %><br /> <%= review["content"] %>
     </li>
   <% end %>
 <% end %>
