@@ -90,7 +90,7 @@ $ exit;
 
 ## Known Bugs
 
-* No functionality... _YET_
+* Report any bugs to developers, contact info below.
 
 ---
 
