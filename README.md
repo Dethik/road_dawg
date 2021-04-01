@@ -62,7 +62,7 @@ A place to search all of your favorite or soon to be favorite destinations and s
 * To interact with application, navigate to http://localhost:3000/ in a web browser.
 * Exit live server, press Ctrl+C in your terminal
 
---- 
+---
 
 ## Editing Instructions
 

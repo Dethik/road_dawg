@@ -1,0 +1,10 @@
+<h1><%= @destination["city"] %>, <%= @destination["country"]%></h1>
+
+<% if @reviews != nil %>
+  <h3>Reviews</h3>
+  <% @reviews.each do |review| %>
+    <li>
+      <%= review["author"] %>, <%= review["content"] %>
+    </li>
+  <% end %>
+<% end %>
