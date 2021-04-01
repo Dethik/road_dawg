@@ -30,13 +30,15 @@
 * _Bootstrap-Sass 3.4.1_
 * _git 2.30.0_
 * _devise_
-* _rails_admin_
+* _rails-admin_
 
 ---
 
 ## Description
 
 A place to search all of your favorite or soon to be favorite destinations and see what people think of them.
+
+This user interface was created to be used in conjuction with our travel_api. You can clone or read more about it [here](https://github.com/andyL89/travel_api).
 
 ---
 
@@ -51,16 +53,30 @@ A place to search all of your favorite or soon to be favorite destinations and s
 
 ## Setup/Installation
 
-* To clone this directory, navigate in your terminal to the desired location of the project and run command `git clone https://github.com/joanna-miller/road_dawg.git`
-* Navigate to top level of the directory with command `cd road_dawg`
-* To install bundler for managing gems run command `gem install bundler`
-* To install gems into the project run command `bundle install`
-* Launch PostgreSQL to run a persistent database management server with command `postgres`
-* To recreate database, run command `rake db:setup`
-* To run tests using rspec, run command `rspec`
-* To run a live server, from the root level of the project directory in your terminal, run command `rails server`
+* To clone this directory, navigate in your terminal to the desired location of the project and run command `$ git clone https://github.com/joanna-miller/road_dawg.git`
+* Navigate to top level of the directory with command `$ cd road_dawg`
+* To install bundler for managing gems run command `$ gem install bundler`
+* To install gems into the project run command `$ bundle install`
+* To install dependencies with webpacker, run command `$ rails webpacker:install`
+* Launch PostgreSQL to run a persistent database management server with command `$ postgres`
+* To recreate database, run command `$ rake db:setup`
+* To run tests using rspec, run command `$ rspec`
+* To run a live server, from the root level of the project directory in your terminal, run command `$ rails server`
 * To interact with application, navigate to http://localhost:3000/ in a web browser.
-* Exit live server, press Ctrl+C in your terminal
+* To exit live server, press Ctrl+C in your terminal
+* To change a user's status to admin:
+```
+$ psql
+```
+```
+$ \c road_dawg_development;
+```
+```
+$ UPDATE users SET admin = true WHERE email = '[user email]';
+```
+```
+$ exit;
+```
 
 ---
 
